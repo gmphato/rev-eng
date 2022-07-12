@@ -42,6 +42,10 @@ function List() {
     );
 }
 
+function Button() {
+    return e('button', {}, 'Click here!')
+}
+
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(e(App, {
@@ -50,3 +54,5 @@ root.render(e(App, {
 }));
 
 root.render(e(List));
+
+root.render(e(Button));
