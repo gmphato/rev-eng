@@ -20,9 +20,18 @@ class LikeButton extends React.Component {
     }
 }
 
-const doc = document.getElementById('root');
-const root = ReactDOM.createRoot(doc);
-const element = e(LikeButton); // create a a huge object of react elements
-console.log(element);
-console.log(root.render)
-root.render(element);
+function App({
+    name,
+    callback
+  }) {
+    return /*#__PURE__*/React.createElement("div", {
+      ref: callback
+    }, /*#__PURE__*/React.createElement("h1", null, name));
+  }
+
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(e(App, {
+    name: "Saeloun blog",
+    callback: () => console.log("Blog rendered")
+}));
