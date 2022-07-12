@@ -46,6 +46,15 @@ function Button() {
     return e('button', {}, 'Click here!')
 }
 
+function Buttoon() {
+    const [clicked, setClicked] = React.useState(0);
+    console.log(clicked);
+    console.log('rendered');
+    return /*#__PURE__*/React.createElement("button", {
+      onClick: e => setClicked(prev => prev + 1)
+    }, "Click Me");
+}
+
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(e(App, {
@@ -56,3 +65,5 @@ root.render(e(App, {
 root.render(e(List));
 
 root.render(e(Button));
+
+root.render(e(Buttoon));
